@@ -425,7 +425,11 @@ class HttpClient(object):
         return self._conn.send_request('POST', suffix_url, files=files,
             data=data, headers=headers).content
 
+    @property
+    def session_id(self):
+        return self._session_id
 
+    
 class _LivyConnection(object):
 
     _SESSIONS_URI = '/sessions'
